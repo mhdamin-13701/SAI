@@ -310,8 +310,8 @@ Global searchClientIsAllow As Boolean
 
 Sub ColorRow(Row As Integer, Color As Long, FlexGrid As VSFlexGrid)
 With FlexGrid
-    For I = 1 To .Cols - 2
-        .Col = I
+    For i = 1 To .Cols - 2
+        .Col = i
         .Row = Row
         .CellBackColor = Color
     Next
@@ -321,7 +321,7 @@ End Sub
 Function Gettag(UserId As Integer, TagId As Integer) As Boolean
 On Error GoTo ErrorHandler
 Dim rs As New ADODB.Recordset
-    sqlText = "Select * from comaintpermission Where UserId = " & UserId & " and TagId=" & TagId
+    sqlText = "Select * from saipermissions Where UserId = " & UserId & " and TagId=" & TagId
     Set rs = de.con.Execute(sqlText)
     If rs.RecordCount > 0 Then
         Gettag = True
@@ -418,13 +418,13 @@ Sub ReadIniFile(FileName As String, Delimiter As String)
     Open FileName For Input As #Fnum
     FileStr = Input(LOF(Fnum), Fnum)
     XX() = Split(FileStr, Delimiter)
-    For I = LBound(XX) To UBound(XX)
-        If I = 0 Then
-            ServerName = XX(I)
-        ElseIf I = 1 Then
-            DataBase = XX(I)
-        ElseIf I = 2 Then
-            DatabaseYear = XX(I)
+    For i = LBound(XX) To UBound(XX)
+        If i = 0 Then
+            ServerName = XX(i)
+        ElseIf i = 1 Then
+            DataBase = XX(i)
+        ElseIf i = 2 Then
+            DatabaseYear = XX(i)
        End If
     Next
 End Sub
