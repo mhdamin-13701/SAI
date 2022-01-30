@@ -27,11 +27,11 @@ Begin VB.Form FrmCharacter
    End
    Begin VSFlex8Ctl.VSFlexGrid FlexGrid 
       Height          =   3765
-      Left            =   180
+      Left            =   90
       TabIndex        =   7
       Top             =   1740
-      Width           =   16245
-      _cx             =   28654
+      Width           =   16335
+      _cx             =   28813
       _cy             =   6641
       Appearance      =   1
       BorderStyle     =   1
@@ -393,20 +393,52 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Private Sub Form_Load()
-init
+Const ColId = 1
+Const ColCodeNo = 2
+Const ColCommidityTypeId = 3
+Const ColCharacter = 4
+
+Sub FillFormating(FlexGrid As VSFlexGrid)
+    fs = "|>" + "Id"
+    fs = fs + "|>" + "Code No."
+    fs = fs + "|>" + "Commidity Type"
+    fs = fs + "|>" + "Character"
+   With FlexGrid
+        .FormatString = fs
+        .Cols = 5
+        .ColWidth(ColId) = 0
+        SetColWidths ColCommidityTypeId, FlexGrid
+        SetColWidths ColCommidityTypeId, FlexGrid
+        SetColWidths ColCharacter, FlexGrid
+   End With
 End Sub
 
+Sub FillGridCombos()
+Dim Rs As New ADODB.Recordset
+Dim lst As String
+sqlText = "select TypeId , CommidityType from CommidityType Order by TypeId"
+Set Rs = de.con.Execute(sqlText)
+With FlexGrid
+    lst = .BuildComboList(Rs, "CommidityType", "TypeId", vbYellow)
+    .ColComboList(ColCommidityTypeId) = lst
+End With
+End Sub
 
+Private Sub Form_Load()
+init
+FillGridCombos
+End Sub
 
 Sub init()
     Top = 0
     Left = 0
     Dim sqlText As String
     Dim rsCharacter As New ADODB.Recordset
-    sqlText = "select Code, CommidityTypeId, CommidityType, Character from  CharacterQry"
+    sqlText = "select id , Code , CommidityTypeId , Character from Character"
     Set rsCharacter = de.con.Execute(sqlText)
     Set FlexGrid.DataSource = rsCharacter
+    FillFormating FlexGrid
+    FlexGrid.Editable = flexEDKbdMouse
 End Sub
 Sub PrintRep()
 On Error GoTo ErrorHandler

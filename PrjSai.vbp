@@ -17,6 +17,7 @@ Class=Configration; Classes\Configration.cls
 Module=SAIModule; Module\SAIModule.bas
 Form=FrmUpdatePassword.frm
 Form=FrmSAIManagment.frm
+Class=Character; Classes\Character.cls
 Startup="FrmAbout"
 HelpFile=""
 ExeName32="PrjSai.exe"
