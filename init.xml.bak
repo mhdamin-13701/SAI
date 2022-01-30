@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application>
+<Keys  name="SystemName" value="Customer Care System"/>
+<Keys  name="ServerName" value="mainserver" />
+<Keys  name="UserName" value="user1" />
+<Keys  name="PasswordMethod" value="GetPassword" />
+<Keys  name="DatabaseName" value="CustomerCare2022" />
+<Keys  name="Year" value="2022" />
+<Keys  name="Version" value="2.38.0" />
+<Keys  name="Dsn" value="DsnCustomerCare2022" />
+<Keys  name="MainStoreNo" value="8" />
+<Keys  name="DatabaseDestination" value="Customercare2023" />
+</Application>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application>
+<Keys  name="SystemName" value="SAI System"/>
+<Keys  name="ServerName" value="DESKTOP-4AL65O9\SQLEXPRESS" />
+<Keys  name="UserName" value="SaiUser" />
+<Keys  name="PasswordMethod" value="GetPassword" />
+<Keys  name="DatabaseName" value="SAI" />
+<Keys  name="Year" value="2022" />
+<Keys  name="Version" value="1.0.0" />
+<Keys  name="Dsn" value="DsnSai2022" />
+<Keys  name="DatabaseDestination" value="SAI2023" />
+</Application>
