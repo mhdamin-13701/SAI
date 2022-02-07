@@ -29,6 +29,61 @@ Private mvarVersion As Variant 'local copy
 Private mvarDatabaseDestination As Variant 'local copy
 'local variable(s) to hold property value(s)
 Private mvarPasswordMethod As Variant 'local copy
+'local variable(s) to hold property value(s)
+Private mvarSystemUserId As Variant 'local copy
+Private mvarSystemUserPassword As Variant 'local copy
+Public Property Let SystemUserPassword(ByVal vData As Variant)
+'used when assigning a value to the property, on the left side of an assignment.
+'Syntax: X.SystemUserPassword = 5
+    mvarSystemUserPassword = vData
+End Property
+
+
+Public Property Set SystemUserPassword(ByVal vData As Variant)
+'used when assigning an Object to the property, on the left side of a Set statement.
+'Syntax: Set x.SystemUserPassword = Form1
+    Set mvarSystemUserPassword = vData
+End Property
+
+
+Public Property Get SystemUserPassword() As Variant
+'used when retrieving value of a property, on the right side of an assignment.
+'Syntax: Debug.Print X.SystemUserPassword
+    If IsObject(mvarSystemUserPassword) Then
+        Set SystemUserPassword = mvarSystemUserPassword
+    Else
+        SystemUserPassword = mvarSystemUserPassword
+    End If
+End Property
+
+
+
+Public Property Let SystemUserId(ByVal vData As Variant)
+'used when assigning a value to the property, on the left side of an assignment.
+'Syntax: X.SystemUserId = 5
+    mvarSystemUserId = vData
+End Property
+
+
+Public Property Set SystemUserId(ByVal vData As Variant)
+'used when assigning an Object to the property, on the left side of a Set statement.
+'Syntax: Set x.SystemUserId = Form1
+    Set mvarSystemUserId = vData
+End Property
+
+
+Public Property Get SystemUserId() As Variant
+'used when retrieving value of a property, on the right side of an assignment.
+'Syntax: Debug.Print X.SystemUserId
+    If IsObject(mvarSystemUserId) Then
+        Set SystemUserId = mvarSystemUserId
+    Else
+        SystemUserId = mvarSystemUserId
+    End If
+End Property
+
+
+
 Public Property Let PasswordMethod(ByVal vData As Variant)
 'used when assigning a value to the property, on the left side of an assignment.
 'Syntax: X.PasswordMethod = 5

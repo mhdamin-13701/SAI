@@ -17,7 +17,7 @@ Attribute VB_Ext_KEY = "Top_Level" ,"Yes"
 'local variable(s) to hold property value(s)
 Private mvarId As Variant 'local copy
 Private mvarCode As Variant 'local copy
-Private mvarCommidityTypeId As Variant 'local copy
+Private mvarCommodityTypeId As Variant 'local copy
 Private mvarCharacter As Variant 'local copy
 Public Property Let Character(ByVal vData As Variant)
 'used when assigning a value to the property, on the left side of an assignment.
@@ -45,27 +45,27 @@ End Property
 
 
 
-Public Property Let CommidityTypeId(ByVal vData As Variant)
+Public Property Let CommodityTypeId(ByVal vData As Variant)
 'used when assigning a value to the property, on the left side of an assignment.
-'Syntax: X.CommidityTypeId = 5
-    mvarCommidityTypeId = vData
+'Syntax: X.CommodityTypeId = 5
+    mvarCommodityTypeId = vData
 End Property
 
 
-Public Property Set CommidityTypeId(ByVal vData As Variant)
+Public Property Set CommodityTypeId(ByVal vData As Variant)
 'used when assigning an Object to the property, on the left side of a Set statement.
-'Syntax: Set x.CommidityTypeId = Form1
-    Set mvarCommidityTypeId = vData
+'Syntax: Set x.CommodityTypeId = Form1
+    Set mvarCommodityTypeId = vData
 End Property
 
 
-Public Property Get CommidityTypeId() As Variant
+Public Property Get CommodityTypeId() As Variant
 'used when retrieving value of a property, on the right side of an assignment.
-'Syntax: Debug.Print X.CommidityTypeId
-    If IsObject(mvarCommidityTypeId) Then
-        Set CommidityTypeId = mvarCommidityTypeId
+'Syntax: Debug.Print X.CommodityTypeId
+    If IsObject(mvarCommodityTypeId) Then
+        Set CommodityTypeId = mvarCommodityTypeId
     Else
-        CommidityTypeId = mvarCommidityTypeId
+        CommodityTypeId = mvarCommodityTypeId
     End If
 End Property
 

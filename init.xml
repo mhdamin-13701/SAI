@@ -8,5 +8,7 @@
 <Keys  name="Year" value="2022" />
 <Keys  name="Version" value="1.0.0" />
 <Keys  name="Dsn" value="DsnSai2022" />
-<Keys  name="DatabaseDestination" value="SAI2023" />
+<Keys  name="SystemUserId" value="1" />
+<Keys  name="SystemUserPassword" value="56789" />
+
 </Application>

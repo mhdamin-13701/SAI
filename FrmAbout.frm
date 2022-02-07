@@ -29,7 +29,7 @@ Begin VB.Form FrmAbout
       _ExtentX        =   19076
       _ExtentY        =   926
       _Version        =   131074
-      Begin VB.TextBox TxtPasswprd 
+      Begin VB.TextBox TxtPassword 
          BackColor       =   &H00FFFFFF&
          BorderStyle     =   0  'None
          BeginProperty Font 
@@ -47,7 +47,7 @@ Begin VB.Form FrmAbout
          Left            =   3060
          PasswordChar    =   "*"
          TabIndex        =   2
-         Top             =   90
+         Top             =   120
          Width           =   2760
       End
       Begin VB.TextBox TxtUserId 
@@ -210,7 +210,7 @@ On Error GoTo ErrorHandler
     If de.con.State <> adStateOpen Then de.con.Open ConnectString, systemConfigration.UserId, systemConfigration.Password
     If de.con.State <> adStateOpen Then de.con.Open ConnectString, systemConfigration.UserId, systemConfigration.Password
     de.con.CommandTimeout = 0
-    sqlText = "Select * From users Where UserId=" & IIf(LTrim(RTrim(TxtUserId.text)) = "", 0, TxtUserId.text) & " And Password='" & TxtPasswprd.text & "'"
+    sqlText = "Select * From users Where UserId=" & IIf(LTrim(RTrim(TxtUserId.text)) = "", 0, TxtUserId.text) & " And Password='" & TxtPassword.text & "'"
     Set rs = de.con.Execute(sqlText)
     CheckPassword = Not (rs.EOF)
 Exit Function
@@ -229,7 +229,7 @@ If CheckPassword() Then
     LoadProgram = True
 Else
         MsgBox "Wrong password", vbExclamation + vbMsgBoxRight, "Attention"
-        TxtPasswprd.SetFocus
+        TxtPassword.SetFocus
         Sendkeys "{Home}+{End}"
         LoadProgram = False
 End If
@@ -245,6 +245,9 @@ End Sub
 
 Private Sub Form_Load()
     ParseXml
+    TxtUserId.text = systemConfigration.SystemUserId
+    TxtPassword.text = systemConfigration.SystemUserPassword
+    
     ProgramTitle = systemConfigration.SystemName & " " & systemConfigration.Year & " -version " & systemConfigration.Version
     Me.Caption = ProgramTitle
     Effect = 1
@@ -287,11 +290,11 @@ Select Case Button.Index
 End Select
 End Sub
 
-Private Sub TxtPasswprd_GotFocus()
+Private Sub TxtPassword_GotFocus()
 ChangeToEnglish
 End Sub
 
-Private Sub TxtPasswprd_KeyPress(KeyAscii As Integer)
+Private Sub TxtPassword_KeyPress(KeyAscii As Integer)
     If KeyAscii = 13 Then
         If LoadProgram Then
             Unload FrmAbout

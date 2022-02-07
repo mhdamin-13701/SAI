@@ -1,6 +1,5 @@
 VERSION 5.00
 Object = "{BEEECC20-4D5F-4F8B-BFDC-5D9B6FBDE09D}#1.0#0"; "vsflex8.ocx"
-Object = "{0BA686C6-F7D3-101A-993E-0000C0EF6F5E}#2.0#0"; "Threed20.ocx"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDATLST.OCX"
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
@@ -10,29 +9,29 @@ Begin VB.Form FrmCharacter
    ClientHeight    =   6240
    ClientLeft      =   45
    ClientTop       =   390
-   ClientWidth     =   16500
+   ClientWidth     =   10395
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    ScaleHeight     =   6240
-   ScaleWidth      =   16500
+   ScaleWidth      =   10395
    Begin Crystal.CrystalReport cr1 
-      Left            =   8640
-      Top             =   930
+      Left            =   8970
+      Top             =   300
       _ExtentX        =   741
       _ExtentY        =   741
       _Version        =   348160
       PrintFileLinesPerPage=   60
    End
    Begin VSFlex8Ctl.VSFlexGrid FlexGrid 
-      Height          =   3765
+      Height          =   4455
       Left            =   90
-      TabIndex        =   7
+      TabIndex        =   4
       Top             =   1740
-      Width           =   16335
-      _cx             =   28813
-      _cy             =   6641
+      Width           =   10245
+      _cx             =   18071
+      _cy             =   7858
       Appearance      =   1
       BorderStyle     =   1
       Enabled         =   -1  'True
@@ -92,7 +91,7 @@ Begin VB.Form FrmCharacter
       OutlineBar      =   0
       OutlineCol      =   0
       Ellipsis        =   0
-      ExplorerBar     =   0
+      ExplorerBar     =   5
       PicturesOver    =   0   'False
       FillStyle       =   0
       RightToLeft     =   0   'False
@@ -122,19 +121,19 @@ Begin VB.Form FrmCharacter
       AccessibleValue =   ""
       AccessibleRole  =   24
    End
-   Begin MSDataListLib.DataCombo ComboCommidityType 
-      Height          =   360
-      Left            =   5280
-      TabIndex        =   5
+   Begin MSDataListLib.DataCombo ComboCommodityType 
+      Height          =   420
+      Left            =   7740
+      TabIndex        =   3
       Top             =   1200
       Width           =   2595
       _ExtentX        =   4577
-      _ExtentY        =   635
+      _ExtentY        =   741
       _Version        =   393216
       Text            =   ""
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   9.75
+         Size            =   12
          Charset         =   162
          Weight          =   400
          Underline       =   0   'False
@@ -142,12 +141,12 @@ Begin VB.Form FrmCharacter
          Strikethrough   =   0   'False
       EndProperty
    End
-   Begin VB.TextBox Text1 
+   Begin VB.TextBox TxtCharacter 
       Height          =   405
-      Left            =   1020
-      TabIndex        =   4
+      Left            =   1050
+      TabIndex        =   2
       Top             =   1200
-      Width           =   4215
+      Width           =   6615
    End
    Begin VB.TextBox TxtCodeNo 
       Height          =   405
@@ -326,10 +325,10 @@ Begin VB.Form FrmCharacter
       Align           =   1  'Align Top
       Height          =   690
       Left            =   0
-      TabIndex        =   3
+      TabIndex        =   6
       Top             =   0
-      Width           =   16500
-      _ExtentX        =   29104
+      Width           =   10395
+      _ExtentX        =   18336
       _ExtentY        =   1217
       ButtonWidth     =   1191
       ButtonHeight    =   1164
@@ -350,42 +349,59 @@ Begin VB.Form FrmCharacter
          EndProperty
       EndProperty
    End
-   Begin Threed.SSFrame SSFrame1 
-      Height          =   585
-      Left            =   0
-      TabIndex        =   8
-      Top             =   5610
-      Width           =   16455
-      _ExtentX        =   29025
-      _ExtentY        =   1032
-      _Version        =   131074
-   End
    Begin VB.Label Label3 
       AutoSize        =   -1  'True
-      Caption         =   "Commidity Type"
+      Caption         =   "Commodity Type"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   162
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   195
-      Left            =   5310
-      TabIndex        =   6
+      Left            =   7770
+      TabIndex        =   7
       Top             =   930
-      Width           =   1110
+      Width           =   1395
    End
    Begin VB.Label Label2 
       AutoSize        =   -1  'True
       Caption         =   "Character"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   162
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   195
       Left            =   1020
-      TabIndex        =   2
+      TabIndex        =   5
       Top             =   930
-      Width           =   690
+      Width           =   840
    End
    Begin VB.Label Label1 
       AutoSize        =   -1  'True
       Caption         =   "Code No."
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   162
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   195
       Left            =   210
       TabIndex        =   0
       Top             =   930
-      Width           =   675
+      Width           =   810
    End
 End
 Attribute VB_Name = "FrmCharacter"
@@ -395,33 +411,68 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Const ColId = 1
 Const ColCodeNo = 2
-Const ColCommidityTypeId = 3
+Const ColCommodityTypeId = 3
 Const ColCharacter = 4
+
+Dim SaiDataServie As New SaiSharedDataService
+Dim character_ As New Character
+
 
 Sub FillFormating(FlexGrid As VSFlexGrid)
     fs = "|>" + "Id"
     fs = fs + "|>" + "Code No."
-    fs = fs + "|>" + "Commidity Type"
+    fs = fs + "|>" + "Commodity Type"
     fs = fs + "|>" + "Character"
    With FlexGrid
         .FormatString = fs
         .Cols = 5
         .ColWidth(ColId) = 0
-        SetColWidths ColCommidityTypeId, FlexGrid
-        SetColWidths ColCommidityTypeId, FlexGrid
+        SetColWidths ColCommodityTypeId, FlexGrid
         SetColWidths ColCharacter, FlexGrid
    End With
 End Sub
 
 Sub FillGridCombos()
-Dim Rs As New ADODB.Recordset
+Dim rs As New ADODB.Recordset
 Dim lst As String
-sqlText = "select TypeId , CommidityType from CommidityType Order by TypeId"
-Set Rs = de.con.Execute(sqlText)
+sqltext = "select commoditytypeid , commoditytype from commoditytype Order by commoditytypeid"
+Set rs = de.con.Execute(sqltext)
 With FlexGrid
-    lst = .BuildComboList(Rs, "CommidityType", "TypeId", vbYellow)
-    .ColComboList(ColCommidityTypeId) = lst
+    lst = .BuildComboList(rs, "commoditytype", "commoditytypeid", vbYellow)
+    .ColComboList(ColCommodityTypeId) = lst
 End With
+End Sub
+
+Sub ClearControls()
+character_.Character = ""
+character_.Code = ""
+character_.CommodityTypeId = -1
+character_.Id = -1
+Me.TxtCodeNo.text = ""
+Me.TxtCharacter.text = ""
+Me.ComboCommodityType.BoundText = -1
+End Sub
+
+Private Sub ComboCommodityType_KeyPress(KeyAscii As Integer)
+If KeyAscii = 13 Then
+        If ComboCommodityType.MatchedWithList Then
+            character_.CommodityTypeId = ComboCommodityType.BoundText
+        End If
+        Dim characterResult_ As New SaiResult
+        Set characterResult_ = SaiDataServie.SaveOrUpdateCharacter(character_)
+        If characterResult_.ResultState Then
+            MsgBox "Character Saved successfully", vbInformation, "Save or update character"
+            
+            ClearControls
+            Me.TxtCodeNo.SetFocus
+        Else
+            MsgBox characterResult_.ResultDescription, vbError, "error saving character"
+            Dim ctrl As Control
+            Set ctrl = Me.ActiveControl
+            ctrl.SetFocus
+            Sendkeys "{home}+{end}"
+        End If
+End If
 End Sub
 
 Private Sub Form_Load()
@@ -432,13 +483,19 @@ End Sub
 Sub init()
     Top = 0
     Left = 0
-    Dim sqlText As String
+    Dim sqltext As String
     Dim rsCharacter As New ADODB.Recordset
-    sqlText = "select id , Code , CommidityTypeId , Character from Character"
-    Set rsCharacter = de.con.Execute(sqlText)
+    sqltext = "select id , Code , CommodityTypeId , Character from Character"
+    Set rsCharacter = de.con.Execute(sqltext)
     Set FlexGrid.DataSource = rsCharacter
     FillFormating FlexGrid
     FlexGrid.Editable = flexEDKbdMouse
+    Dim rsCommodityType As New ADODB.Recordset
+    sqltext = "select commoditytypeid , commoditytype from commoditytype"
+    Set rsCommodityType = de.con.Execute(sqltext)
+    Set ComboCommodityType.RowSource = rsCommodityType
+    ComboCommodityType.ListField = "commoditytype"
+    ComboCommodityType.BoundColumn = "commoditytypeid"
 End Sub
 Sub PrintRep()
 On Error GoTo ErrorHandler
@@ -461,4 +518,26 @@ Select Case Button.Index
     Case 3:
         Unload Me
 End Select
+End Sub
+
+Private Sub TxtCharacter_KeyPress(KeyAscii As Integer)
+If KeyAscii = 13 Then
+    Me.ComboCommodityType.SetFocus
+End If
+End Sub
+
+Private Sub TxtCharacter_LostFocus()
+    character_.Character = TxtCharacter.text
+End Sub
+
+Private Sub TxtCodeNo_KeyPress(KeyAscii As Integer)
+If KeyAscii = 13 Then
+    Me.TxtCharacter.SetFocus
+    Sendkeys "{home}+{end}"
+End If
+
+End Sub
+
+Private Sub TxtCodeNo_LostFocus()
+    character_.Code = TxtCodeNo.text
 End Sub
